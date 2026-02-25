@@ -7,9 +7,9 @@ O Portal de Ferramentas Utilitárias é uma aplicação web que reúne ferrament
 A proposta é oferecer uma solução simples, prática e acessível, onde o utilizador consiga gerir informações importantes rapidamente, sem depender de aplicações diferentes. Os dados ficam guardados no navegador, garantindo continuidade de uso mesmo após fechar a aplicação.
 
 
-## Milestone - Estrutura e Criação de Tarefas
+# Milestone - Estrutura e Criação de Tarefas
 
-# Issues
+## Issues
 [- Criar estrutur do módulo TaskMaster](https://github.com/kelyacoosta/portal-ferramentas-utilitarias/issues/1) - ✅ Finalizado.
 
 [- Criar formulário de tarefa](https://github.com/kelyacoosta/portal-ferramentas-utilitarias/issues/2) - ✅ Finalizado.
@@ -21,9 +21,9 @@ A proposta é oferecer uma solução simples, prática e acessível, onde o util
 [- Salvar tarefas no navegador](https://github.com/kelyacoosta/portal-ferramentas-utilitarias/issues/5) - ✅ Finalizado.
 
 
-## Milestone - Listagem, Gestão e Finalização do TaskMaster.
+# Milestone - Listagem, Gestão e Finalização do TaskMaster.
 
-# Issues
+## Issues
 
 [- Exibir lista de tarefas](https://github.com/kelyacoosta/portal-ferramentas-utilitarias/issues/6) - ✅ Finalizado.
 
