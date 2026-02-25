@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import Navbar from "./components/Navbar"
-import Home from "./pages/home"
+import Home from "./pages/Home"
 import TaskMaster from "./pages/Todo"
 import ConnectHub from "./pages/Contacts"
 import MoneyFlow from "./pages/Finances"
