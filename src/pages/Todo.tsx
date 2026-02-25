@@ -14,7 +14,10 @@ type Task = {
 }
 
 export default function TaskMaster() {
-    const [tasks, setTasks] = useState<Task[]>([])
+    const [tasks, setTasks] = useState<Task[]>(() => {
+        const saved = localStorage.getItem("tasks")
+        return saved ? JSON.parse(saved) : []
+    })
 
     const {
         register,
@@ -33,26 +36,21 @@ export default function TaskMaster() {
             done: false,
         }
 
-        setTasks([...tasks, newTask])
+        setTasks((prev) => [...prev, newTask])
         reset()
     }
 
     function removeTask(id: number) {
-        setTasks(tasks.filter((task) => task.id !== id))
+        setTasks((prev) => prev.filter((task) => task.id !== id))
     }
 
     function toggleDone(id: number) {
-        setTasks(
-            tasks.map((task) =>
+        setTasks((prev) =>
+            prev.map((task) =>
                 task.id === id ? { ...task, done: !task.done } : task
             )
         )
     }
-
-    useEffect(() => {
-        const saved = localStorage.getItem("tasks")
-        if (saved) setTasks(JSON.parse(saved))
-    }, [])
 
     useEffect(() => {
         localStorage.setItem("tasks", JSON.stringify(tasks))

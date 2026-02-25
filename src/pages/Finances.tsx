@@ -13,7 +13,10 @@ type Finance = {
 }
 
 export default function Finances() {
-    const [items, setItems] = useState<Finance[]>([])
+    const [items, setItems] = useState<Finance[]>(() => {
+        const saved = localStorage.getItem("finances")
+        return saved ? JSON.parse(saved) : []
+    })
 
     const {
         register,
@@ -40,11 +43,6 @@ export default function Finances() {
     function removeItem(id: number) {
         setItems(items.filter((i) => i.id !== id))
     }
-
-    useEffect(() => {
-        const saved = localStorage.getItem("finances")
-        if (saved) setItems(JSON.parse(saved))
-    }, [])
 
     useEffect(() => {
         localStorage.setItem("finances", JSON.stringify(items))

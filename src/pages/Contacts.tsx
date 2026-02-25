@@ -13,7 +13,10 @@ type Contact = {
 }
 
 export default function Contacts() {
-    const [contacts, setContacts] = useState<Contact[]>([])
+    const [contacts, setContacts] = useState<Contact[]>(() => {
+        const saved = localStorage.getItem("contacts")
+        return saved ? JSON.parse(saved) : []
+    })
 
     const {
         register,
@@ -37,11 +40,6 @@ export default function Contacts() {
     function removeContact(id: number) {
         setContacts(contacts.filter((c) => c.id !== id))
     }
-
-    useEffect(() => {
-        const saved = localStorage.getItem("contacts")
-        if (saved) setContacts(JSON.parse(saved))
-    }, [])
 
     useEffect(() => {
         localStorage.setItem("contacts", JSON.stringify(contacts))
